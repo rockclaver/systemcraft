@@ -38,61 +38,46 @@ A skill is discovered by:
 2. matching the user's request against the skill description
 3. invoking the corresponding instructions
 
-### Required skill metadata
-
-Each `SKILL.md` must start with YAML frontmatter like:
-
-```md
----
-name: write-a-prd
-description: Create a PRD through user interview, codebase exploration, and module design, then submit as a GitHub issue. Use when user wants to write a PRD, create a product requirements document, or plan a new feature.
----
-```
-
-The `description` is vital because the agent uses it to route requests.
-
 ## Installation
 
-This repo is primarily a skill definition repository. There is no build step in this workspace by default. Installing skills into an AI agent means making the skill folders available to that agent runtime.
+This repository is a catalog of skill definitions intended for online installation.
 
-### Local installation
+### Install via runtime registry or CLI
 
-1. Clone the repository:
-
-```bash
-git clone <repo-url>
-cd systemcraft
-```
-
-2. Point your AI agent's skill loader at the `skills/` directory.
-
-3. Restart or refresh your agent so it rescans available skills.
-
-### If your agent has a skills CLI
-
-Some agent runtimes provide commands to add or remove skill folders. For example:
-
-```bash
-npx skills add ./skills/core/write-a-prd
-npx skills add ./skills/core/prd-to-plan
-npx skills remove ./skills/core/old-skill
-```
-
-> Use these commands only if your agent runtime supports them.
-
-### Folder-based installation
-
-If your agent uses a filesystem-based skill registry, install skills by copying or symlinking the folders into the configured location.
+Use your agent runtime’s supported registry or CLI to add a skill from the published repo.
 
 Example:
 
 ```bash
-ln -s $PWD/skills/core/write-a-prd /path/to/agent/skill-store/write-a-prd
+npx skills add rockclaver/systemcraft --skill write-a-prd
+npx skills add rockclaver/systemcraft --skill prd-to-plan
+npx skills add rockclaver/systemcraft --skill grill-me
+```
+
+If your runtime accepts an explicit repository URL, use that instead:
+
+```bash
+npx skills add https://github.com/rockclaver/systemcraft --skill write-a-prd
+```
+
+### Install from a remote URL
+
+If your agent can load a skill from a remote source, point it at the published skill location.
+
+Example:
+
+```bash
+npx skills add https://raw.githubusercontent.com/rockclaver/systemcraft/main/skills/core/write-a-prd/SKILL.md
 ```
 
 ## Using skills in AI agents
 
 Once the skill folders are available to the agent, you can use them by asking for the capability described in the `description` frontmatter.
+
+Some runtimes also support explicit skill invocation syntax:
+
+- Claude-style invocation: `/write-a-prd`, `/prd-to-plan`, `/grill-me`
+- Codex-style invocation: `$write-a-prd`, `$prd-to-plan`, `$grill-me`
 
 ### Example user prompts
 
