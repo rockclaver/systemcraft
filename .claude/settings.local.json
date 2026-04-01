@@ -4,7 +4,9 @@
       "Bash(npx skills:*)",
       "WebFetch(domain:better-auth.com)",
       "WebSearch",
-      "WebFetch(domain:www.better-auth.com)"
+      "WebFetch(domain:www.better-auth.com)",
+      "Bash(node /home/claver/.claude/skills/code-graph/scripts/scan.js)",
+      "Bash(echo \"Exit: $?\")"
     ]
   }
 }
