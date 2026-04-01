@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx skills:*)",
+      "WebFetch(domain:better-auth.com)",
+      "WebSearch",
+      "WebFetch(domain:www.better-auth.com)"
+    ]
+  }
+}
