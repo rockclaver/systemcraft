@@ -1,0 +1,10 @@
+servers:
+  - name: Server 1
+    host: 203.0.113.10
+    user: root
+    key: ~/.ssh/id_ed25519
+
+  - name: Server 2
+    host: my-server.example.com
+    # user omitted -> SSH default user resolution applies
+    # key omitted  -> SSH default identity/agent applies
