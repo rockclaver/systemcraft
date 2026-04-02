@@ -1,6 +1,6 @@
 ---
 name: write-a-prd
-description: Create a PRD through user interview, codebase exploration, and module design, then submit as a GitHub issue. Use when user wants to write a PRD, create a product requirements document, or plan a new feature. Explicit invocation: `/write-a-prd` or `$write-a-prd`.
+description: Create a PRD through user interview, codebase exploration, and module design, then submit as a GitHub issue. Use when user wants to write a PRD, create a product requirements document, or plan a new feature.
 ---
 
 This skill will be invoked when the user wants to create a PRD. You may skip steps if you don't consider them necessary.
