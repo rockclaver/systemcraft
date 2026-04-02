@@ -135,11 +135,25 @@ Helps with documents.
 
 ## Existing skills in this repo
 
+### Core
+
+- `skills/core/code-graph` — build and maintain a codebase index so an agent can navigate a repo from one structured map
+- `skills/core/find-code` — locate files and code precisely with grep and shell tools instead of AI guessing
+- `skills/core/grill-me` — critique a design or plan by interrogating assumptions and surfacing risks
+- `skills/core/prd-to-plan` — turn a PRD into a phased implementation plan using tracer-bullet vertical slices
+- `skills/core/refactor-codebase` — incrementally restructure a codebase toward a cleaner, more scalable architecture
+- `skills/core/write-a-prd` — write a PRD from user input, codebase exploration, and module design
 - `skills/core/write-a-skill` — guidance for creating new agent skills
-- `skills/core/write-a-prd` — write a PRD from user input and codebase context
-- `skills/core/prd-to-plan` — turn a PRD into a concrete implementation plan
 - `skills/core/write-tests` — write high-value tests and improve practical coverage in an existing codebase
-- `skills/core/grill-me` — critique a design or plan and surface risks
+
+### Backend
+
+- `skills/backend/design-api` — design and implement consistent REST API endpoints with validation, error handling, shared utilities, and endpoint test coverage
+- `skills/backend/migrate-to-better-auth` — migrate an existing authentication system to `better-auth` using a phased refactor
+
+### Infra
+
+- `skills/infra/dockerize-and-deploy` — containerize an app and produce production-grade Docker deployment assets
 
 ## Troubleshooting
 
