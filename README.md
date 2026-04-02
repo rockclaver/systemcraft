@@ -50,6 +50,7 @@ Example:
 
 ```bash
 npx skills add rockclaver/systemcraft --skill write-a-prd
+npx skills add rockclaver/systemcraft --skill write-feature-prd
 npx skills add rockclaver/systemcraft --skill prd-to-plan
 npx skills add rockclaver/systemcraft --skill grill-me
 ```
@@ -76,12 +77,13 @@ Once the skill folders are available to the agent, you can use them by asking fo
 
 Some runtimes also support explicit skill invocation syntax:
 
-- Claude-style invocation: `/write-a-prd`, `/prd-to-plan`, `/grill-me`
-- Codex-style invocation: `$write-a-prd`, `$prd-to-plan`, `$grill-me`
+- Claude-style invocation: `/write-a-prd`, `/write-feature-prd`, `/prd-to-plan`, `/grill-me`
+- Codex-style invocation: `$write-a-prd`, `$write-feature-prd`, `$prd-to-plan`, `$grill-me`
 
 ### Example user prompts
 
 - `Help me write a PRD for a new feature.`
+- `Write a feature PRD for this existing codebase and account for reusable modules.`
 - `Turn this requirements draft into a product plan.`
 - `Grill this architecture proposal for gaps and risks.`
 - `Teach me how to write a new agent skill.`
@@ -143,6 +145,7 @@ Helps with documents.
 - `skills/core/prd-to-plan` — turn a PRD into a phased implementation plan using tracer-bullet vertical slices
 - `skills/core/refactor-codebase` — incrementally restructure a codebase toward a cleaner, more scalable architecture
 - `skills/core/write-a-prd` — write a PRD from user input, codebase exploration, and module design
+- `skills/core/write-feature-prd` — write feature PRDs grounded in the current codebase, reusable modules, and available tools
 - `skills/core/write-a-skill` — guidance for creating new agent skills
 - `skills/core/write-tests` — write high-value tests and improve practical coverage in an existing codebase
 
