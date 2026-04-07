@@ -17,15 +17,14 @@ Example structure:
 
 ```
 skills/
-  core/
-    write-a-skill/
-      SKILL.md
-    write-a-prd/
-      SKILL.md
-    prd-to-plan/
-      SKILL.md
-    grill-me/
-      SKILL.md
+  write-a-skill/
+    SKILL.md
+  write-a-prd/
+    SKILL.md
+  prd-to-plan/
+    SKILL.md
+  grill-me/
+    SKILL.md
 ```
 
 ## How skills are loaded
@@ -68,7 +67,7 @@ If your agent can load a skill from a remote source, point it at the published s
 Example:
 
 ```bash
-npx skills add https://raw.githubusercontent.com/rockclaver/systemcraft/main/skills/core/write-a-prd/SKILL.md
+npx skills add https://raw.githubusercontent.com/rockclaver/systemcraft/main/skills/write-a-prd/SKILL.md
 ```
 
 ## Using skills in AI agents
@@ -102,7 +101,7 @@ If multiple loaded skills overlap, the agent should choose the most specific one
 
 ## Skill authoring best practices
 
-Use the `skills/core/write-a-skill` skill as the template for new skills.
+Use the `skills/write-a-skill` skill as the template for new skills.
 
 ### Keep skills focused
 
@@ -137,26 +136,24 @@ Helps with documents.
 
 ## Existing skills in this repo
 
-### Core
+### Catalog
 
-- `skills/core/code-graph` — build and maintain a codebase index so an agent can navigate a repo from one structured map
-- `skills/core/find-code` — locate files and code precisely with grep and shell tools instead of AI guessing
-- `skills/core/grill-me` — critique a design or plan by interrogating assumptions and surfacing risks
-- `skills/core/prd-to-plan` — turn a PRD into a phased implementation plan using tracer-bullet vertical slices
-- `skills/core/refactor-codebase` — incrementally restructure a codebase toward a cleaner, more scalable architecture
-- `skills/core/write-a-prd` — write a PRD from user input, codebase exploration, and module design
-- `skills/core/write-feature-prd` — write feature PRDs grounded in the current codebase, reusable modules, and available tools
-- `skills/core/write-a-skill` — guidance for creating new agent skills
-- `skills/core/write-tests` — write high-value tests and improve practical coverage in an existing codebase
-
-### Backend
-
-- `skills/backend/design-api` — design and implement consistent REST API endpoints with validation, error handling, shared utilities, and endpoint test coverage
-- `skills/backend/migrate-to-better-auth` — migrate an existing authentication system to `better-auth` using a phased refactor
-
-### Infra
-
-- `skills/infra/dockerize-and-deploy` — containerize an app and produce production-grade Docker deployment assets
+- `skills/code-graph` — build and maintain a codebase index so an agent can navigate a repo from one structured map
+- `skills/design-api` — design and implement consistent REST API endpoints with validation, error handling, shared utilities, and endpoint test coverage
+- `skills/dockerize-and-deploy` — containerize an app and produce production-grade Docker deployment assets
+- `skills/find-code` — locate files and code precisely with grep and shell tools instead of AI guessing
+- `skills/grill-me` — critique a design or plan by interrogating assumptions and surfacing risks
+- `skills/migrate-to-better-auth` — migrate an existing authentication system to `better-auth` using a phased refactor
+- `skills/prd-to-plan` — turn a PRD into a phased implementation plan using tracer-bullet vertical slices
+- `skills/refactor-codebase` — incrementally restructure a codebase toward a cleaner, more scalable architecture
+- `skills/request-refactor-plan` — create a detailed refactor plan with tiny commits via user interview
+- `skills/server-access` — resolve SSH server entries and run remote checks or delegated checks
+- `skills/tdd` — test-driven development guidance
+- `skills/triage-issue` — triage GitHub issues by clarifying requirements and proposing a fix strategy
+- `skills/write-a-prd` — write a PRD from user input, codebase exploration, and module design
+- `skills/write-feature-prd` — write feature PRDs grounded in the current codebase, reusable modules, and available tools
+- `skills/write-a-skill` — guidance for creating new agent skills
+- `skills/write-tests` — write high-value tests and improve practical coverage in an existing codebase
 
 ## Troubleshooting
 
@@ -175,7 +172,7 @@ If the agent loads the skill but does not use it:
 
 ## Contributing new skills
 
-1. Create a new folder under `skills/<domain>/`.
+1. Create a new folder under `skills/`.
 2. Add `SKILL.md` with frontmatter and instructions.
 3. Optionally add `REFERENCE.md`, `EXAMPLES.md`, or helper scripts.
 4. Test the skill by issuing a prompt that matches the `Use when ...` criteria.
@@ -185,4 +182,5 @@ If the agent loads the skill but does not use it:
 
 This repository is a collection of agent skills designed to be loaded by an AI agent runtime. Installation is primarily about making these skill folders visible to the agent, while usage depends on clear skill descriptions and prompt matching.
 
-If you want to extend the repo, start from `skills/core/write-a-skill` and keep every skill goal-driven, narrow, and easy for the agent to choose.
+If you want to extend the repo, start from `skills/write-a-skill` and keep every skill goal-driven, narrow, and easy for the agent to choose.
+
